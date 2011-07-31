@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList include="antoinette-base.xml">
+
+  <sim>
+
+    <description>Levavasseur Antoinette IV (YASim)</description>
+    <flight-model archive="y">yasim</flight-model>
+    <aero archive="y">antoinette-yasim</aero>
+
+  </sim>
+
+</PropertyList>

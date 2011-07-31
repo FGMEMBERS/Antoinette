@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>antoinette.ac</path>
+
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/Antoinette/Models/Liveries", 10);
+
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+    
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
+    </load>
+
+    <unload>
+      livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
+    </unload>
+  </nasal>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>fuselage</object-name>
+    <object-name>structure</object-name>
+    <object-name>attaches</object-name>
+    <object-name>axes</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>intprofondeur</object-name>
+    <object-name>intdirection</object-name>
+    <object-name>helice1</object-name>
+    <object-name>helice2</object-name>
+    <object-name>radiateurs</object-name>
+    <object-name>siege</object-name>
+    <object-name>volantG</object-name>
+    <object-name>volantD</object-name>
+    <object-name>attachesvolants</object-name>
+    <object-name>bidons</object-name>
+    <object-name>portesbidons</object-name>
+    <object-name>bouchons</object-name>
+    <object-name>intaileronG</object-name>
+    <object-name>intaileronD</object-name>
+    <object-name>tenseurs</object-name>
+    
+    <object-name>blocmoteur</object-name>
+    <object-name>pistons</object-name>
+    <object-name>echappes</object-name>
+    <object-name>tuyaux</object-name>
+    <object-name>entrees</object-name>
+    <object-name>disque</object-name>
+    <object-name>bougies</object-name>
+    
+    <!-- Objets transparents -->
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>ailes</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>tail</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>propdisc</object-name>
+    <object-name>propblur</object-name>
+    <object-name>cables</object-name>
+    <object-name>cables</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>fuselage</object-name>
+    <object-name>structure</object-name>
+    <object-name>attaches</object-name>
+    <object-name>axes</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>intprofondeur</object-name>
+    <object-name>intdirection</object-name>
+    <object-name>helice1</object-name>
+    <object-name>helice2</object-name>
+    <object-name>radiateurs</object-name>
+    <object-name>siege</object-name>
+    <object-name>volantG</object-name>
+    <object-name>volantD</object-name>
+    <object-name>attachesvolants</object-name>
+    <object-name>bidons</object-name>
+    <object-name>portesbidons</object-name>
+    <object-name>bouchons</object-name>
+    <object-name>intaileronG</object-name>
+    <object-name>intaileronD</object-name>
+    <object-name>tenseurs</object-name>
+
+    <object-name>blocmoteur</object-name>
+    <object-name>pistons</object-name>
+    <object-name>echappes</object-name>   
+    <object-name>tuyaux</object-name>
+    <object-name>entrees</object-name>
+    <object-name>disque</object-name>
+    <object-name>bougies</object-name>
+   
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+<!--
+    <diffuse>
+      <red-prop>diffuse/red</red-prop>
+      <green-prop>diffuse/green</green-prop>
+      <blue-prop>diffuse/blue</blue-prop>
+    </diffuse>
+
+    <ambient>
+      <red-prop>ambient/red</red-prop>
+      <green-prop>ambient/green</green-prop>
+      <blue-prop>ambient/blue</blue-prop>
+    </ambient>
+-->
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+<!--
+    <shininess>
+      <shininess-prop>shininess</shininess-prop>
+    </shininess>
+-->
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>ailes</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>tail</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    
+    <property-base>sim/model/livery-t</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture-t.png</texture>
+<!--
+    <diffuse>
+      <red-prop>diffuse/red</red-prop>
+      <green-prop>diffuse/green</green-prop>
+      <blue-prop>diffuse/blue</blue-prop>
+    </diffuse>
+
+    <ambient>
+      <red-prop>ambient/red</red-prop>
+      <green-prop>ambient/green</green-prop>
+      <blue-prop>ambient/blue</blue-prop>
+    </ambient>
+-->
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+<!--
+    <shininess>
+      <shininess-prop>shininess</shininess-prop>
+    </shininess>
+-->
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>pistons</object-name>
+    <object-name>tuyaux</object-name>
+  </effect>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>propdisc</object-name>
+    <object-name>propblur</object-name>
+    <object-name>cables</object-name>
+  </animation>
+
+  <!-- Intérieur -->
+  <model>
+    <path>Aircraft/Antoinette/Models/Interior/interior.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- L'hélice --> 
+  <animation>
+    <name>Helice</name>
+    <object-name>helice1</object-name>
+    <object-name>helice2</object-name>
+  </animation>
+
+  <animation>
+    <name>HeliceComplete</name>
+    <object-name>propdisc</object-name>
+    <object-name>propblur</object-name>
+    <object-name>Helice</object-name>
+  </animation>
+
+  <!-- Séléction de l'objet visible en fonction des rpm -->
+  <animation>
+    <type>select</type>
+    <object-name>propdisc</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value>1100</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>propblur</object-name>
+    <condition>
+    <and>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value>400.000</value>
+      </greater-than>
+      <less-than>
+        <property>engines/engine[0]/rpm</property>
+        <value>1100.001</value>
+      </less-than>
+    </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Helice</object-name>
+    <condition>
+      <less-than>
+        <property>engines/engine[0]/rpm</property>
+        <value>1100</value>
+      </less-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>HeliceComplete</object-name>
+    <property>engines/engine[0]/rpm</property>
+    <factor> 1 </factor>
+    <center>
+      <x-m> -5.412 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.309 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Gouverne de profondeur -->
+  <animation>
+    <type>rotate</type>
+    <object-name>profondeur</object-name>
+    <object-name>intprofondeur</object-name>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> 20 </factor>
+    <center>
+      <x-m>  4.732 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.438 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Gouverne de direction -->
+  <animation>
+    <type>rotate</type>
+    <object-name>direction</object-name>
+    <object-name>intdirection</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> 20 </factor>
+    <center>
+      <x-m>  4.730 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.424 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <!-- Animations des ailerons -->
+  <animation>
+    <type>rotate</type>
+    <object-name>aileronG</object-name>
+    <object-name>intaileronG</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <factor> 15 </factor>
+    <axis>
+      <x1-m> -1.645 </x1-m>
+      <y1-m> -6.355 </y1-m>
+      <z1-m>  0.591 </z1-m>
+      <x2-m> -1.553 </x2-m>
+      <y2-m> -4.671 </y2-m>
+      <z2-m>  0.377 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>aileronD</object-name>
+    <object-name>intaileronD</object-name>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <factor> -15 </factor>
+    <axis>
+      <x1-m> -1.645 </x1-m>
+      <y1-m>  6.355 </y1-m>
+      <z1-m>  0.591 </z1-m>
+      <x2-m> -1.553 </x2-m>
+      <y2-m>  4.671 </y2-m>
+      <z2-m>  0.377 </z2-m>
+    </axis>
+  </animation>
+
+</PropertyList>
+
