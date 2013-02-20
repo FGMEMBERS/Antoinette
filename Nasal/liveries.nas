@@ -1,2 +1,2 @@
-aircraft.livery.init("Aircraft/Fokker-Eindecker-EIII/Models/Liveries");
+aircraft.livery.init("Aircraft/Antoinette/Models/Liveries");
 
