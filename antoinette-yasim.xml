@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Levavasseur Antoinette IV
+                  : 2011 Emmanuel BARANGER
+                  : 2013 Updated Emmanuel BARANGER
+
+     Source       : http://en.wikipedia.org/wiki/Antoinette_IV
+                  : www.hydroretro.net/etudegh/antoinette.pdf
+                 
+     Wingspan     : 12.80 m  ( 42 ft 0 in )
+     Length       : 11.50 m  ( 37 ft 9 in )
+     Height       :  2.40 m  (  7 ft 9 in )
+     Empty weight :  250 kg  ( 550 lb     )
+     Engine       : 1 x Antoinette Vee-8 (50 hp)
+     Max speed    : 140 km/h (  76 kt     )
+-->
+
+<airplane mass="550" >
+
+  <approach speed="20" aoa="7" fuel="0.3">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.65"/>
+  </approach>
+  
+  <cruise speed="70" alt="5000" fuel="0.7" >
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="1" />
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.65" />
+  </cruise>
+
+  <cockpit x="1.642" y="0.00" z="0.901"/>
+
+  <fuselage ax="5.167" ay="0" az="0.222" bx="-4.713" by="0" bz="-0.562" width="1.031" taper="0.4" midpoint="0.3"/>
+
+  <!-- Wing up -->
+  <wing x="2.721" y="0.433" z="0.329" 
+        chord="2.736" 
+        length="5.945" 
+        taper="0.6"
+        dihedral="5" 
+        camber="0.01">
+        <stall aoa="24" width="1" peak="1.5"/>
+        <flap1 start="0.70" end="1" lift="1.2" drag="1.1"/>
+      
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+      
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+  </wing>
+
+  <hstab x="-3.967" y="0" z="-0.440" 
+         chord="1.396" 
+         length="1.315" 
+         taper="1"> 
+         <stall aoa="22" width="1" peak="1.5"/>
+         <flap0 start="0" end="0.7" lift="1.55" drag="1.2"/>
+
+         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-5.231" y="0" z="-1.45171" 
+         chord="0.964" 
+         length="2.017" 
+         taper="1">
+         <stall aoa="20" width="1" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.6" drag="1.2"/>
+
+         <control-input axis="/controls/flight/rudder" square="true" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
+  </vstab>
+
+  <!-- Engines      : Antoinette Vee 8
+
+                    : Informations : http://aerostories.free.fr/juniors/queven02/moteurs/
+                    : www.hydroretro.net/etudegh/antoinette.pdf
+
+       Type         : V engine with eight cylinders
+       Power        :   50 hp at 1400 rpm
+       Displacement : 7.27 L (443.64 cm 3)
+       Masse        : 60 kg    ( 132.2 lb  )
+  -->
+  <propeller x="5.100" y="0" z="0.309"  
+             radius="1.0795"
+             mass="132.2"       
+             moment="4"
+             cruise-power="45"
+             cruise-alt="5000" 
+             cruise-speed="70"
+             cruise-rpm="1100"
+             takeoff-power="50"
+             takeoff-rpm="1400">
+             <actionpt x="5.412" y="0" z="0.309"/>
+             <piston-engine eng-rpm="1400" 
+                            alt="5000" 
+                            eng-power="50"
+                            displacement="443.64"/>
+             <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
+             <control-input control="STARTER" axis="/controls/engines/engine[0]/starter"/>
+             <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos"/>
+             <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture"/>
+  </propeller>
+
+  <!-- Patte de nez -->
+  <gear x="5.449" y="0" z="-1.471" 
+        skid="1"
+        compression="0.01"
+        spring="0.1"
+        sfric="1"
+        dfric="1">
+  </gear>
+  
+  <!-- Left wheel -->
+  <gear x="3.088" y="0.651" z="-1.639" 
+        sfric="1.1"
+        dfric="0.6"
+        compression="0.02">
+  </gear>
+
+  <!-- Right wheel -->
+  <gear x="3.088" y="-0.651" z="-1.639" 
+        sfric="1.1"
+        dfric="0.6"
+        compression="0.02">
+  </gear>
+
+  <!-- Tail wheel -->
+  <gear x="-5.029" y="0" z="-1.617" 
+        sfric="1.1"
+        dfric="0.6"
+        compression="0.02">
+  </gear>
+
+  <!-- Fuel: Forward 142 lbs -->
+  <tank x="2.824" y="0" z="0.562" capacity="160"/>
+  
+</airplane>
